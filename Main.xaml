@@ -48,7 +48,6 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Java.Activities</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Start Server" sap:VirtualizedContainerService.HintSize="836,1109.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -113,8 +112,14 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Download and extract server to zip file" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DownloadAndExtract.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_FileURL">https://github.com/agibsonccc/mailboxdetection-workflow/releases/download/1.0/distro.zip</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_ExtractPath">[Directory.GetCurrentDirectory()]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_FileURL">https://github.com/KonduitAI/mailboxdetection-workflow/releases/download/v1.1/distro.zip</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ExtractPath">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Directory.GetCurrentDirectory()">
+                  <mva:VisualBasicValue.Result>
+                    <OutArgument x:TypeArguments="x:String" />
+                  </mva:VisualBasicValue.Result>
+                </mva:VisualBasicValue>
+              </InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
           <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Configure server after downloaded" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ConfigureServer.xaml">
