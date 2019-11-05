@@ -2,7 +2,7 @@ Workflows for Mailbox Detection
 -----------------------------------
 This workflow illustrates the integration of UiPath and Konduit-Serving with the example of mailbox detection. 
 This workflow able to detect the location of each mailbox and whether it's empty or not.  
-![MailBox Result](img/mailboxbeforeafter.png "MailBox Result")
+![MailBox Result](img/mailboxbeforeafter.PNG "MailBox Result")
 
 File Descriptions
 ----------------------
