@@ -2,6 +2,7 @@ Workflows for Mailbox Detection
 -----------------------------------
 This workflow illustrates the integration of UiPath and Konduit-Serving with the example of mailbox detection. 
 This workflow able to detect the location of each mailbox and whether it's empty or not.  
+
 ![MailBox Result](img/mailboxbeforeafter.PNG "MailBox Result")
 
 File Descriptions
@@ -22,6 +23,7 @@ Intended usage
 ### Step 1: 
 Run Main.xaml first. This will download a server distribution from the releases
 of this repository containing everything needed to run the model.
+Note that the downloading of the server distribution takes about 30 minutes, depending on the network connection speed. 
 
 After this, ensure the server output has "INFO: Deployed verticle {}" in the text.
 
