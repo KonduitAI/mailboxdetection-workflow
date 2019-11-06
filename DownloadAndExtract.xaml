@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>496.8,988</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>395.2,1248.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DownloadAndExtract_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -62,7 +62,7 @@
       <AssemblyReference>System.IO.Compression</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadAndExtract" sap:VirtualizedContainerService.HintSize="476.8,928" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadAndExtract" sap:VirtualizedContainerService.HintSize="375.2,1188.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sn:WebClient" Default="[New WebClient()]" Name="FileDownloadClient" />
     </Sequence.Variables>
@@ -71,14 +71,14 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CreateDirectory ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Create the directory to which the file should be extracted." DisplayName="Create Directory" sap:VirtualizedContainerService.HintSize="435.2,66.4" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[in_ExtractPath]">
+    <ui:CreateDirectory ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Create the directory to which the file should be extracted." DisplayName="Create Directory" sap:VirtualizedContainerService.HintSize="333.6,66.4" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[in_ExtractPath]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CreateDirectory>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="FileDownloadIE workflow" sap:VirtualizedContainerService.HintSize="435.2,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="FileDownloadIE.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="FileDownloadIE workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="FileDownloadIE.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_FileURL">https://github.com/KonduitAI/mailboxdetection-workflow/releases/tag/v1.1</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_ExtractPath">
@@ -90,29 +90,31 @@
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,305.6" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="278.4,227.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <InvokeMethod DisplayName="Invoke Method: DownloadFile" sap:VirtualizedContainerService.HintSize="236.8,134.4" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="DownloadFile">
-            <InvokeMethod.TargetObject>
-              <InArgument x:TypeArguments="sn:WebClient">[FileDownloadClient]</InArgument>
-            </InvokeMethod.TargetObject>
-            <InArgument x:TypeArguments="x:String">[in_FileURL]</InArgument>
-            <InArgument x:TypeArguments="x:String">[in_ExtractPath+"\DownloadTemp.zip"]</InArgument>
-          </InvokeMethod>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
-    <InvokeMethod DisplayName="Invoke method: ExtractToDirectory" sap:VirtualizedContainerService.HintSize="435.2,132.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="ExtractToDirectory" TargetType="sic:ZipFile">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Open_Notepad.exe workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="typing\Open_Notepad.exe.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:TypeInto Activate="True" ClickBeforeTyping="False" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" DisplayName="Type Into 'editable text'" EmptyField="False" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[&quot;Extracting DownloadTemp.zip file.................&quot; + Environment.NewLine]">
+      <ui:TypeInto.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="b78fccf33a1964963cfb2c245c58b10b" Selector="&lt;wnd app='notepad.exe' cls='Notepad' title='Untitled - Notepad' /&gt;&lt;wnd aaname='Horizontal' cls='Edit' /&gt;&lt;ctrl name='Text Editor' role='editable text' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:TypeInto.Target>
+    </ui:TypeInto>
+    <InvokeMethod DisplayName="Invoke method: ExtractToDirectory" sap:VirtualizedContainerService.HintSize="333.6,132.8" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="ExtractToDirectory" TargetType="sic:ZipFile">
       <InArgument x:TypeArguments="x:String">[in_ExtractPath+"\DownloadTemp.zip"]</InArgument>
       <InArgument x:TypeArguments="x:String">[in_ExtractPath]</InArgument>
     </InvokeMethod>
-    <ui:Delete sap2010:Annotation.AnnotationText="Using ContinueOnError for cases in which the file does not exist." ContinueOnError="True" DisplayName="Delete Temporary File" sap:VirtualizedContainerService.HintSize="435.2,82.4" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[in_ExtractPath+&quot;\DownloadTemp.zip&quot;]">
+    <ui:TypeInto Activate="True" ClickBeforeTyping="False" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" DisplayName="Type Into 'editable text'" EmptyField="False" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="[&quot;Extraction completed.&quot; + Environment.NewLine]">
+      <ui:TypeInto.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="56424c0c4c7b6f1c4cdf95b05f27d9c5" Selector="&lt;wnd app='notepad.exe' cls='Notepad' title='Untitled - Notepad' /&gt;&lt;wnd aaname='Horizontal' cls='Edit' /&gt;&lt;ctrl name='Text Editor' role='editable text' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:TypeInto.Target>
+    </ui:TypeInto>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Close_Notepad.exe workflow" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="typing\Close_Notepad.exe.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:Delete sap2010:Annotation.AnnotationText="Using ContinueOnError for cases in which the file does not exist." ContinueOnError="True" DisplayName="Delete Temporary File" sap:VirtualizedContainerService.HintSize="333.6,82.4" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[in_ExtractPath+&quot;\DownloadTemp.zip&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
