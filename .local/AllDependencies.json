@@ -818,15 +818,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\chiaw\\.nuget\\packages\\": {}
+    "C:\\Users\\TUF\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Mail box Detection",
       "projectName": "Mail box Detection",
-      "projectPath": "C:\\Users\\chiaw\\Documents\\Github\\mailboxdetection-workflow\\.local",
-      "packagesPath": "C:\\Users\\chiaw\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chiaw\\Documents\\Github\\mailboxdetection-workflow\\.local"
+      "projectPath": "C:\\Users\\TUF\\Desktop\\RPA\\Mailbox_repo\\.local",
+      "packagesPath": "C:\\Users\\TUF\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\TUF\\Desktop\\RPA\\Mailbox_repo\\.local"
     },
     "frameworks": {
       "net461": {
